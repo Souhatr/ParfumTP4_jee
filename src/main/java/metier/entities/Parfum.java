@@ -1,9 +1,22 @@
 package metier.entities;
 
 import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity 
+@Table(name = "parfums")
 public class Parfum  implements Serializable
 {
+	@Id
+	@Column (name="id_parfum")
+	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private Long idParfum;
+	@Column (name="Nom_parfum")
 	private String nomParfum;
 	private String marque;
 	private double prix;

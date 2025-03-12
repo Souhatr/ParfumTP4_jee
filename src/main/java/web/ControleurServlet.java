@@ -45,7 +45,8 @@ public class ControleurServlet extends HttpServlet {
 			double prix = Double.parseDouble(request.getParameter("prix"));
 			Parfum p = metier.save(new Parfum(nom,marque,prix));
 			request.setAttribute("parfum", p);
-	request.getRequestDispatcher("confirmation.jsp").forward(request,response);
+	//request.getRequestDispatcher("confirmation.jsp").forward(request,response);
+			response.sendRedirect("chercher.do?motCle=");
 		}
 		else if (path.equals("/supprimer.do"))
 		{
